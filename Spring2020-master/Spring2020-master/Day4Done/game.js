@@ -1,27 +1,43 @@
 import Scene from "./Scene.js";
 import GameObject from "./GameObject.js"
 import RectangleComponent from "./RectangleComponent.js"
+import AxeBladeComponent from "./AxeBladeComponent.js"
 import RectangleBehavior from "./RectangleBehavior.js";
 import RectangleBehavior2 from "./RectangleBehavior2.js";
+import stationaryBehavior from "./stationaryBehavior.js";
+import AxeHandleBehavior from "./AxeHandleBehavior.js";
 import RectComp2 from "./RectComp2.js";
 import RectanlgeBehavior from "./RectangleBehavior.js";
 
 let startScene = new Scene();
-let billGameObject = new GameObject(200,200);
-let billGameObject2 = new GameObject(50 ,50);
+let spinning = new GameObject(200,200);
+let tracker = new GameObject(50 ,50);
+let trackerBar = new GameObject(75,75);
+let AxeHandle = new GameObject(220,220)
 
-startScene.gameObjects.push(billGameObject);
-startScene.gameObjects.push(billGameObject2);
-let rectangle  = new RectangleComponent(100,100,"red","blue");
+startScene.gameObjects.push(spinning);
+startScene.gameObjects.push(tracker);
+startScene.gameObjects.push(trackerBar);
+startScene.gameObjects.push(AxeHandle);
+let spinTangle  = new RectangleComponent(100,100,"red","blue");
+let axeHandle = new RectangleComponent(175,10,"brown","black");
+let axeBlade = new AxeBladeComponent(105, 3, 50, 0,  Math.PI, "gray");
 let rectangleBehavior = new RectangleBehavior();
-billGameObject.addComponent(rectangle);
-billGameObject.addComponent(rectangleBehavior);
+let AHBehavior = new AxeHandleBehavior();
+spinning.addComponent(spinTangle);
+spinning.addComponent(rectangleBehavior);
 
-
-let rectangle2 = new RectComp2(35,35,"orange","purple", 0, 50, 50);
+AxeHandle.addComponent(axeBlade)
+AxeHandle.addComponent(axeHandle)
+AxeHandle.addComponent(AHBehavior)
+let stationaryTangle = new RectangleComponent(150, 15, "green", "black")
+let trackerTangle = new RectComp2(35,35,"orange","purple", 0, 50, 50);
 let rectangleBehavior2 = new RectangleBehavior2();
-billGameObject2.addComponent(rectangle2);
-billGameObject2.addComponent(rectangleBehavior2);
+trackerBar.addComponent(stationaryTangle)
+trackerBar.addComponent(stationaryBehavior)
+tracker.addComponent(trackerBar);
+tracker.addComponent(trackerTangle);
+tracker.addComponent(rectangleBehavior2);
 let currentScene = startScene;
 
 let canv, ctx;
