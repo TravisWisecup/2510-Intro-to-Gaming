@@ -7,6 +7,7 @@ import Moon from "./prefabs/Moon.js"
 import OscillatingCircle from "./prefabs/OscillatingCircle.js"
 import TextTimer from "./prefabs/TextTimer.js"
 import TrackerBar from "./prefabs/TrackerBar.js"
+import TreeTrunk from "./prefabs/TreeTrunk"
 
 export default {
     Axe,
@@ -17,5 +18,6 @@ export default {
     Moon,
     OscillatingCircle,
     TextTimer,
-    TrackerBar
+    TrackerBar,
+    TreeTrunk
 }
