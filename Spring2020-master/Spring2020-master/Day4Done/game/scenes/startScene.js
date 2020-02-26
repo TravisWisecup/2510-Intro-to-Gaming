@@ -5,66 +5,64 @@ import BackGroundDay from "../prefabs/BackGroundDay.js";
 import DaySky from "../prefabs/DaySky.js";
 import Log from "../prefabs/Log.js";
 import Sun from "../prefabs/Sun.js";
+import TextTimer from "../prefabs/TextTimer.js";
 import Moon from "../prefabs/Moon.js";
 import OscillatingCircle from "../prefabs/OscillatingCircle.js";
-import TextTimer from "../prefabs/TextTimer.js";
 import TrackerBar from "../prefabs/TrackerBar.js"
+import InputBar from "../prefabs/InputBar.js"
+import TreeTrunk from "../prefabs/TreeTrunk.js";
+import Branch from "../prefabs/Branch.js";
 
 export default class startScene extends Base.Scene {
     constructor() {
         super();
 
+        let testtext = new TextTimer(75, 75)
+
         let trackerBar = new TrackerBar(260, 50);
+        let inputBar = new InputBar()
         let axe = new Axe(220, 220)
         let axeBlade = new AxeBlade();
         let log = new Log(350, 350)
         let sun = new Sun()
         //let moon = new GameObject(140, 75)
-        let background = new BackGroundDay(300, 300)
+        let background = new BackGroundDay(350, 400)
+        let treetrunk = new TreeTrunk(525,375)
+        let treebranch1 = new Branch("right", -35, 20);
+        let treebranch2 = new Branch("left", 35, 20);
+        let treebranch3 = new Branch("right", -35, -40);
+        let treebranch4 = new Branch("left", 35, -40);
+        let treebranch5 = new Branch("right", -35, -100);
+        let treebranch6 = new Branch("left", 35, -100);
+        let treebranch7 = new Branch("right", -35, -160);
+        let treebranch8 = new Branch("left", 35, -160);
+        let treebranch9 = new Branch("right", -35, -220);
+        let treebranch10 = new Branch("left", 35, -220);
+        let treebranch11 = new Branch("right", -35, -280);
+        let treebranch12 = new Branch("left", 35, -280);
+        
+        this.children.push(testtext);
         
         this.children.push(background)
         this.children.push(trackerBar);
+        trackerBar.children.push(inputBar)
         this.children.push(axe)
         axe.children.push(axeBlade)
         this.children.push(log)
+        this.children.push(treetrunk)
+        treetrunk.children.push(treebranch1)
+        treetrunk.children.push(treebranch2)
+        treetrunk.children.push(treebranch3)
+        treetrunk.children.push(treebranch4)
+        treetrunk.children.push(treebranch5)
+        treetrunk.children.push(treebranch6)
+        treetrunk.children.push(treebranch7)
+        treetrunk.children.push(treebranch8)
+        treetrunk.children.push(treebranch9)
+        treetrunk.children.push(treebranch10)
+        treetrunk.children.push(treebranch11)
+        treetrunk.children.push(treebranch12)
         background.children.push(sun)
 
-
-        // startScene.gameObjects.push(background);
-        // startScene.gameObjects.push(tracker);
-        // startScene.gameObjects.push(trackerBar);
-        // startScene.gameObjects.push(log);
-        // startScene.gameObjects.push(Axe);
-        // startScene.gameObjects.push(sun);
-        // startScene.gameObjects.push(moon);
-        // startScene.gameObjects.push(sunRays);
-        // let backgroundMidday = new RectangleComponent(800, 900, "DarkCyan")
-        // let backgroundNight = new RectangleComponent(800, 900, "")
-        // let backgroundSky = new RectangleComponent(800, 900, "cyan")
-        // let backgroundEarth = new RectangleComponent(800, 200, "green")
-        // let sunCircle = new CircleComponent(55, "orange", "yellow")
-        // let moonCircle = new SunComponent(55, "white", "black")
-        // let axeHandle = new RectangleComponent(175, 10, "brown", "black");
-        // let axeBlade = new AxeBladeComponent(105, 3, 50, 0, Math.PI, "gray");
-        // let AHBehavior = new AxeHandleBehavior();
-        // let logTop = new CircleComponent(55, "BurlyWood", "black")
-        // let logBottom = new RectangleComponent(160, 180, "Sienna", "black")
-        // let sunBehavior = new SunBehavior();
-
-        // background.addComponent(backgroundSky)
-        // background.addComponent(backgroundEarth)
-        // sun.addComponent(sunCircle)
-        // moon.addComponent(moonCircle)
-        // log.addComponent(logBottom)
-        // log.addComponent(logTop)
-        // Axe.addComponent(axeBlade)
-        // Axe.addComponent(axeHandle)
-        // Axe.addComponent(AHBehavior)
-        // let measureBar = new RectComp2(200, 15, "red", "black")
-        // let trackerTangle = new RectComp2(10, 35, "orange", "purple", 0, 50, 50);
-        // let rectangleBehavior2 = new RectangleBehavior2();
-        // trackerBar.addComponent(measureBar)
-        // tracker.addComponent(trackerTangle);
-        // tracker.addComponent(rectangleBehavior2);
     }
 }
