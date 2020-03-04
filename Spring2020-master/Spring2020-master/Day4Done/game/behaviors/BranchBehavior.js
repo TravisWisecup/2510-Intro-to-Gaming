@@ -18,10 +18,10 @@ export default class BranchBehavior extends Base.Behavior{
         this.gameObject.x = this.x;
         this.gameObject.y = this.y;
         if(this.branchAngle == "left"){
-            this.gameObject.rotation = .6;
+            this.gameObject.rotation = .8;
         }
         else if(this.branchAngle == "right"){
-            this.gameObject.rotation = -.6
+            this.gameObject.rotation = -.8
         }
     }
 }
