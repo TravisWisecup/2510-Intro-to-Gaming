@@ -51,12 +51,12 @@ export default class startScene extends Base.Scene {
             treetrunk.scaleX = treeScale;	
             treetrunk.scaleY = treeScale;	
             this.children.push(treetrunk);	
-            for(j = 0; j < 12; j++)	
+            for(j = 0; j < 36; j++)	
             {	
                 if(j % 2 == 0)	
-                    treeBranch = new Branch("left", 35, 20 - ((j/2) * 60))	
+                    treeBranch = new Branch("left", 35, 20 - ((j/2) * 20))	
                 else{	
-                    treeBranch = new Branch("right", -35, 20 - ((j - 1)/2 * 60))	
+                    treeBranch = new Branch("right", -35, 20 - ((j - 1)/2 * 20))	
                 }	
                 treetrunk.children.push(treeBranch);	
             }	
