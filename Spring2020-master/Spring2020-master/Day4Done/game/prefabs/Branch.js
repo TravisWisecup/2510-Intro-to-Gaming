@@ -10,7 +10,7 @@ export default class TreeTrunk extends Base.GameObject{
     this.x = x;
     this.y = y;
 
-    let RectangleComponent = new Components.RectangleComponent(130, 60, "DarkGreen", "black");
+    let RectangleComponent = new Components.RectangleComponent(130, 20, "DarkGreen", "black");
     this.addComponent(RectangleComponent);
 
     let branchBehavior = new BranchBehavior(branchAngle,x,y);
