@@ -1,4 +1,4 @@
-import NameableParent from "./NamableParent.js"
+import NameableParent from "./NameableParent.js"
 import Point from "./Point.js";
 
 /**
