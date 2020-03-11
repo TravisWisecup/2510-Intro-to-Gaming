@@ -10,6 +10,7 @@ import RectangleBehavior from "./behaviors/RectangleBehavior.js";
 import RectangleBehavior2 from "./behaviors/RectangleBehavior2.js";
 import stationaryBehavior from "./behaviors/stationaryBehavior.js";
 import TextBehavior from "./behaviors/TextBehavior.js";
+import CollisionCircleBehavior from "./behaviors/CollisionCircleBehavior.js";
 
 export default{
   CircleBehavior,
@@ -22,6 +23,7 @@ export default{
   OrbitBehavior,
   RectangleBehavior,
   RectangleBehavior2,
-  TextBehavior
+  TextBehavior,
+  CollisionCircleBehavior
   
 }
