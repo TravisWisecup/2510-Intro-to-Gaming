@@ -1,15 +1,37 @@
-import Base from "../../engine/Base.js";
-import Components from "../../engine/Components.js"
-import OrbitBehavior from "./../behaviors/OrbitBehavior.js"
-
-export default class BackGroundDay extends Base.GameObject{
-  constructor() {
-    super(0,0)
-    let circleComponent = new Components.CircleComponent(55, "orange", "yellow");
-    let orbitBehavior = new OrbitBehavior();
-    this.addComponent(circleComponent);
-    this.addComponent(orbitBehavior);
-
-  }
-
+export default {
+  name: "Sun",
+  components:[
+    {
+      type:"CircleComponent",
+      values:[
+        {
+          key:"radius",
+          value:"55"
+        },
+        {
+          key:"fill",
+          value:"orange"
+        },
+        {
+          key:"stroke",
+          value:"yellow"
+        },
+      ]
+    },
+    {
+      type:"CircleCollider",
+      values:[
+        {
+          key:"radius",
+          value:"55"
+        }
+      ]
+    },
+    {
+      type:"orbitBehavior",
+    },
+    {
+      type:"CollisionCircleBehavior",
+    },
+  ]
 }

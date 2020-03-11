@@ -1,12 +1,26 @@
-import Base from "../../engine/Base.js";
-import Components from "../../engine/Components.js"
-
-export default class TreeTrunk extends Base.GameObject{
-  constructor(x,y) {
-    super(x,y)
-    let RectangleComponent = new Components.RectangleComponent(30, 600, "Brown", "black");
-    this.addComponent(RectangleComponent);
-
-  }
-
+export default {
+  name: "TreeTrunk",
+  components:[
+    {
+      type:"RectangleComponent",
+      values:[
+        {
+          key: "width",
+          value: "30"
+        },
+        {
+          key: "height",
+          value: "600"
+        },
+        {
+          key: "fill",
+          value: "brown"
+        },
+        {
+          key: "stroke",
+          value: "black"
+        },
+      ]
+    },
+  ]
 }

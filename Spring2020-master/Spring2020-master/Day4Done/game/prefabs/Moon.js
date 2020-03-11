@@ -1,15 +1,37 @@
-import Base from "../../engine/Base.js";
-import Components from "../../engine/Components.js"
-import OrbitBehavior from "./../behaviors/OrbitBehavior.js"
-
-export default class OscillatingCircle extends Base.GameObject{
-  constructor() {
-    super(0,0)
-    let circleComponent = new Components.CircleComponent(10, "white", "black");
-    let orbitBehavior = new OrbitBehavior();
-    this.addComponent(circleComponent);
-    this.addComponent(orbitBehavior);
-
-  }
-
+export default {
+  name: "Moon",
+  components:[
+    {
+      type:"CircleComponent",
+      values:[
+        {
+          key:"radius",
+          value:"10"
+        },
+        {
+          key:"fill",
+          value:"white"
+        },
+        {
+          key:"stroke",
+          value:"black"
+        },
+      ]
+    },
+    {
+      type:"CircleCollider",
+      values:[
+        {
+          key:"radius",
+          value:"10"
+        }
+      ]
+    },
+    {
+      type:"orbitBehavior",
+    },
+    {
+      type:"CollisionCircleBehavior",
+    },
+  ]
 }

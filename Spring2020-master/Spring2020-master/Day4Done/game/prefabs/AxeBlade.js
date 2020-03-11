@@ -1,12 +1,38 @@
-import Base from "../../engine/Base.js";
-import Components from "../../engine/Components.js"
+export default {
+  name: "AxeBlade",
+  components:[
+    {
+      type:"AxeBladeComponent",
+      values:[
+        {
+          key: "x",
+          value: "105"
+        },
+        {
+          key: "y",
+          value: "3"
+        },
+        {
+          key: "r",
+          value: "50"
+        },
+        {
+          key: "sAngle",
+          value: "0"
+        },
+        {
+          key: "eAngle",
+          value: "Math.PI"
+        },
+        {
+          key: "fill",
+          value: "gray"
+        },
 
-export default class Axe extends Base.GameObject{
-  constructor() {
-    super(0,0)
-    let circleComponent = new Components.AxeBladeComponent(105, 3, 50, 0, Math.PI, "gray");
-    this.addComponent(circleComponent);
-
-  }
-
+      ]
+    },
+    {
+      type:"AxeHandleBehavior",
+    },
+  ]
 }

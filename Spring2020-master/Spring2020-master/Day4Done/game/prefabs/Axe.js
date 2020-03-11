@@ -1,15 +1,29 @@
-import Base from "../../engine/Base.js";
-import Components from "../../engine/Components.js"
-import AxeHandleBehavior from "../behaviors/AxeHandleBehavior.js";
-
-export default class Axe extends Base.GameObject{
-  constructor(x,y) {
-    super(x,y)
-    let RectangleComponent = new Components.RectangleComponent(175, 10, "brown", "black");
-    let AHBehavior = new AxeHandleBehavior();
-    this.addComponent(RectangleComponent);
-    this.addComponent(AHBehavior);
-
-  }
-
+export default {
+  name: "Axe",
+  components:[
+    {
+      type:"RectangleComponent",
+      values:[
+        {
+          key: "width",
+          value: "175"
+        },
+        {
+          key: "height",
+          value: "10"
+        },
+        {
+          key: "fill",
+          value: "brown"
+        },
+        {
+          key: "stroke",
+          value: "black"
+        },
+      ]
+    },
+    {
+      type:"AxeHandleBehavior",
+    },
+  ]
 }
