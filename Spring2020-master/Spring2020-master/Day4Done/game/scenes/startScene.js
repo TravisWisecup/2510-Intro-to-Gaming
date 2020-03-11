@@ -1,5 +1,4 @@
 
-// let log = new Log(350, 350)
 // //let moon = new GameObject(140, 75)
 // let treetrunk;
 // let treeBranch;
@@ -18,48 +17,48 @@ export default {
     name: "startScene",
     objects : [
       {
-        name:"testtext",
+        name: "testtext",
         location: {x:75, y:75},
-        type:'TextTimer',
+        type: "TextTimer",
       },
       {
         name:"background",
         location: {x:350, y:400},
-        type:'BackGroundDay',
-        children:[
+        type:"BackGroundDay",
+        children: [
             {
                 name:"sun",
                 location: {x:0, y:0},
-                type:'Sun',
+                type:"Sun",
             },
           ]
       },
       {
         name:"log",
         location: {x:350, y:350},
-        type:'Log',
+        type:"Log",
       },
       {
         name:"axe",
         location: {x:220, y:220},
-        type:'Axe',
+        type:"Axe",
         children:[
             {
                 name:"axeBlade",
                 location: {x:0, y:0},
-                type:'AxeBlade',
+                type:"AxeBlade",
             },
           ]
       },
       {
         name:"trackerBar",
         location: {x:260, y:50},
-        type:'TrackerBar',
+        type:"TrackerBar",
         children:[
           {
             name:"inputBar",
             location: {x:-100, y:0},
-            type:'InputBar',
+            type:"InputBar",
           }
         ]
       }
