@@ -12,6 +12,7 @@ import stationaryBehavior from "./behaviors/stationaryBehavior.js";
 import TextBehavior from "./behaviors/TextBehavior.js";
 import CollisionCircleBehavior from "./behaviors/CollisionCircleBehavior.js";
 import DotBehavior from "./behaviors/DotBehavior.js";
+import TreeBuilder from "./behaviors/TreeBuilder.js";
 
 export default{
   CircleBehavior,
@@ -26,6 +27,7 @@ export default{
   RectangleBehavior2,
   TextBehavior,
   CollisionCircleBehavior,
-  DotBehavior
+  DotBehavior,
+  TreeBuilder
   
 }
