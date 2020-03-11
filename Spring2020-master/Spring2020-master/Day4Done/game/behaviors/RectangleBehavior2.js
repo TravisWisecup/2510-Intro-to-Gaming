@@ -1,6 +1,6 @@
 import Behavior from "./Behavior.js"
 
-class RectangleBehavior2 extends Behavior{
+export default class RectangleBehavior2 extends Engine.Base.Behavior{
 
     start(){
         this.gameObject.speed = 0;
@@ -32,5 +32,3 @@ class RectangleBehavior2 extends Behavior{
         }
     }
 }
-
-export default RectangleBehavior2;

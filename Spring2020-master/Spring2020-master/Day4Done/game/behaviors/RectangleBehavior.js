@@ -1,6 +1,6 @@
-import Behavior from "./Behavior.js"
+import Engine from "../../engine/Engine.js"
 
-class RectanlgeBehavior extends Behavior{
+export default class RectangleBehavior extends Engine.Base.Behavior{
     start(){
         this.gameObject.rotation = 0;
     }
@@ -8,5 +8,3 @@ class RectanlgeBehavior extends Behavior{
         this.gameObject.rotation += .04;
     }
 }
-
-export default RectanlgeBehavior;

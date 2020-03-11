@@ -1,6 +1,6 @@
 import Component from "./Component.js"
 
-class stationaryBehavior extends Component{
+export default class stationaryBehavior extends Component{
 
     start(){
 
@@ -11,5 +11,3 @@ class stationaryBehavior extends Component{
     }
 
 }
-
-export default stationaryBehavior;
