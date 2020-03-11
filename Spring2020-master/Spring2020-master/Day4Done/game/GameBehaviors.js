@@ -29,6 +29,7 @@ export default{
   TextBehavior,
   CollisionCircleBehavior,
   DotBehavior,
-  TreeBuilder
+  TreeBuilder,
+  UpdateBranchBehavior
   
 }
