@@ -13,6 +13,7 @@ import TextBehavior from "./behaviors/TextBehavior.js";
 import CollisionCircleBehavior from "./behaviors/CollisionCircleBehavior.js";
 import DotBehavior from "./behaviors/DotBehavior.js";
 import TreeBuilder from "./behaviors/TreeBuilder.js";
+import UpdateBranchBehavior from "./behaviors/UpdateBranchBehavior.js";
 
 export default{
   CircleBehavior,
