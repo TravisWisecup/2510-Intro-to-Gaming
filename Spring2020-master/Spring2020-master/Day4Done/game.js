@@ -1,6 +1,6 @@
+import Engine from "./engine/Engine.js"
 import Scenes from "./game/Scenes.js"
 import SceneManager from "./game/SceneManager.js"
-import Engine from "./engine/Engine.js"
 import GameBehaviors from "./game/GameBehaviors.js";
 import GameObjects from "./game/GameObjects.js"
 
@@ -10,15 +10,10 @@ Engine.Base.Scene.gameObjects = GameObjects;
 Engine.Base.Scene.components = Engine.Components;
 Engine.Base.Scene.gameBehaviors = GameBehaviors;
 
-let StartScene = Engine.Base.Scene.parse(Scenes.startScene);
-let sceneOne = Engine.Base.Scene.parse(Scenes.SceneOne);
-let sceneTwo = Engine.Base.Scene.parse(Scenes.SceneTwo);
+Scenes.allScenes
+    .forEach(i => SceneManager.addScene(Engine.Base.Scene.parse(i)))
 
-SceneManager.addScene(StartScene)
-SceneManager.addScene(sceneOne)
-SceneManager.addScene(sceneTwo)
-
-SceneManager.currentScene = StartScene;
+SceneManager.currentScene = Scenes.StartScreen;
 
 //Setup event handling
 document.body.addEventListener('keydown', keydown);
