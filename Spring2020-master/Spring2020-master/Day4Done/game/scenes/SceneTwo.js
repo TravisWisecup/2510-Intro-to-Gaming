@@ -1,8 +1,6 @@
-import Base from "../../engine/Base.js"
+export default {
+  name: "SceneTwo",
 
-export default class SceneTwo extends Base.Scene{
-  constructor(){
-    super();
-    
-  }
+  
+  objects : [  ]
 }
