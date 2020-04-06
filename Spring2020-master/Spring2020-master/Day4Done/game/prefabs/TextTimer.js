@@ -1,5 +1,5 @@
 export default {
-  name: "Timer",
+  name: "TextTimer",
   components:[
     {
       type:"TextComponent",

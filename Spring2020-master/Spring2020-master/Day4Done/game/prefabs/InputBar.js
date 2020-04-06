@@ -23,7 +23,7 @@ export default {
       ]
     },
     {
-      type:"inputBarBehavior",
+      type:"InputBarBehavior",
     },
   ]
 }
