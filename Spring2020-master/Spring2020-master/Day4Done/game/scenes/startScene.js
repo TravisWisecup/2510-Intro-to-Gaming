@@ -14,7 +14,7 @@
 // }
 
 export default {
-    name: "startScene",
+    name: "StartScene",
     objects : [
       {
         name: "testtext",
