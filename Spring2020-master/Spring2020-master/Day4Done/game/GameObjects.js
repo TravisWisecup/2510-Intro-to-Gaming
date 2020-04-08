@@ -12,7 +12,12 @@ import Sun from "./prefabs/Sun.js"
 import TextTimer from "./prefabs/TextTimer.js"
 import TrackerBar from "./prefabs/TrackerBar.js"
 import TreeTrunk from "./prefabs/TreeTrunk.js"
-
+import TestCollisionCircle from "./prefabs/TestCollisionCircle.js"
+import Camera from "./prefabs/Camera.js"
+import Canvas from "./prefabs/Canvas.js"
+import CollisionCircle from "./prefabs/CollisionCircle.js"
+import CollisionDot from "./prefabs/CollisionDot.js"
+import ScreenText from "./prefabs/ScreenText.js"
 
 export default {
   OscillatingCircle,
@@ -28,5 +33,9 @@ export default {
   Sun,
   TextTimer,
   TrackerBar,
-  TreeTrunk
+  TreeTrunk,
+  TestCollisionCircle,
+  Camera,
+  Canvas,
+  ScreenText,
 }
