@@ -1,15 +1,19 @@
-export default class Input{
+/**
+ * Static holder for the state of the input
+ */
+
+class Input {
 
     //---------------------------------------------------
     //Key handling members
     //---------------------------------------------------
     static keys = []; //What is the current state of each key?
 
-    static down = [];   //Did the key go down this frame?
-    static up = [];     //Did the key do up this frame?
+    static down = []; //Did the key go down this frame?
+    static up = []; //Did the key do up this frame?
 
     //When we start an update(), we shift to these arrays so we don't have mutating arrays mid-update
-    static frameDown = [];  
+    static frameDown = [];
     static frameUp = [];
 
 
@@ -21,15 +25,15 @@ export default class Input{
     static mouseButtons = []; //What is the current State of the each button?
 
     static mouseButtonsDown = []; //Did the mouse button go down this frame?
-    static mouseButtonsUp = [];     //Did the mouse button go up this frame?
-    
-    //When we start an update(), we shift these arrays so we don't have mutating arrays mid-update
-    static frameMouseButtonsDown = [];  
-    static frameMouseButtonsUp = [];
-    
+    static mouseButtonsUp = []; //Did the mouse button go up this frame?
 
-    
-    static swapUpDownArrays(){
+    //When we start an update(), we shift these arrays so we don't have mutating arrays mid-update
+    static frameMouseButtonsDown = [];
+    static frameMouseButtonsUp = [];
+
+
+
+    static swapUpDownArrays() {
         this.frameDown = this.down;
         this.frameUp = this.up;
         this.down = [];
@@ -46,17 +50,17 @@ export default class Input{
     //---------------------------------------------------
 
     //Did the key come up this frame?
-    static getKeyUp(key){
+    static getKeyUp(key) {
         return this.frameUp[key];
     }
 
     //Did the key go down the frame? [Remember, the OS may make it look like key repeated when they did not]
-    static getKeyDown(key){
+    static getKeyDown(key) {
         return this.frameDown[key];
     }
 
     //Is the key pressed? Down (true) Up (false)
-    static getKey(key){
+    static getKey(key) {
         return this.keys[key];
     }
 
@@ -66,19 +70,21 @@ export default class Input{
 
 
     //Did the mouse button come up this frame?
-    static getMouseButtonUp(button){
+    static getMouseButtonUp(button) {
         return this.frameMouseButtonsUp[button];
     }
 
     //Did the mouse button go down this frame?
-    static getMouseButtonDown(button){
+    static getMouseButtonDown(button) {
         return this.frameMouseButtonsDown[button];
     }
 
     //Is the mouse button pressed? Down (true) Up (false)
-    static getMouseButton(button){
+    static getMouseButton(button) {
         return this.mouseButtons[button];
     }
 
-    
+
 }
+
+export default Input;

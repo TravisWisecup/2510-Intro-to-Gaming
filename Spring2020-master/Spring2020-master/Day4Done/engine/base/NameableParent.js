@@ -1,5 +1,14 @@
-export default class NameableParent {
-     /**
+import GameObject from "./GameObject.js";
+
+/**
+ * Parent interface for scenes and game objects.
+ * 
+ * The Scene class and the GameObject class both descend from this class.
+ */
+
+class NameableParent {
+
+    /**
      * An array of children this instance has
      */
     children = [];
@@ -54,3 +63,5 @@ export default class NameableParent {
 
     }
 }
+
+export default NameableParent;
