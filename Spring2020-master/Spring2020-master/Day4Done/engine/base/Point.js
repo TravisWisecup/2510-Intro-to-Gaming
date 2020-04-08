@@ -1,67 +1,51 @@
-import GameObject from "./GameObject.js";
-
 /**
- * Parent interface for scenes and game objects.
- * 
- * The Scene class and the GameObject class both descend from this class.
+ * 2D Point class
  */
 
-class NameableParent {
-
-    /**
-     * An array of children this instance has
-     */
-    children = [];
-
-    /**
-     * The name of this instance
-     */
-    name = "";
-
+class Point {
     /**
      * 
-     * @param {String} Name of this instance
+     * @param {Number} x The x location of the point
+     * @param {Number} y The y location of the point
      */
-    constructor(name) {
-        this.name = name;
+    constructor(x = 0, y = 0) {
+        this.x = x;
+        this.y = y;
     }
 
     /**
-     * Remove a game object from the scene tree.
+     * Calculate the Euclidian distance between this point and another point.
      * 
-     * This is done recursively since the game object would be the descendant of
-     * any depth in the scene tree.
-     * 
-     * @param {GameObject} gameObject Remove this game object from the Scene tree
+     * @param {Point} otherPoint The point to which we are calculating a distance
      */
+    distance(otherPoint = new Point(0, 0)) {
 
-    destroy(gameObject) {
-        let found = false;
-        for (let i = 0; i < this.children.length && !found; i++) {
-            let child = this.children[i];
-            if (child == gameObject) {
-                found = true;
-                if (child.onDestroy) {
-                    child.onDestroy()
-                }
-            }
-        }
-        if (found) {
-            this.children = this.children.filter(i => i != gameObject);
-            return true;
-        } else {
-            //Loop again and destroy recursively
-            for (let i = 0; i < this.children.length && !found; i++) {
-                let child = this.children[i];
-                let result = child.destroy(gameObject);
-                if (result) return true;
-            }
-            //If we get here we didn't find anything
-            return false;
-        }
+        return Math.sqrt(this.distanceSquared(otherPoint));
+    }
 
+    /**
+     * Since finding the Euclidean distance requires an expensive square root
+     * calculation, we have the option of calculating the squared distance to go
+     * quicker.
+     * 
+     * @param {Point} otherPoint The point to which we are calculating the
+     * squared distance
+     */
+    distanceSquared(otherPoint = new Point(0, 0)) {
+        let xDiff = (this.x - otherPoint.x);
+        let yDiff = (this.y - otherPoint.y);
+        return xDiff * xDiff + yDiff * yDiff;
+    }
 
+    /**
+     * Find the pairwise difference to another point.
+     * 
+     * @param {Point} otherPoint The point from which we are doing a pairwise
+     * difference. 
+     */
+    diff(otherPoint) {
+        return new Point(this.x - otherPoint.x, this.y - otherPoint.y);
     }
 }
 
-export default NameableParent;
+export default Point;
