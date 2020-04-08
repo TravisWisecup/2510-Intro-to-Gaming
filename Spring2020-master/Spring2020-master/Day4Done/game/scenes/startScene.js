@@ -17,6 +17,62 @@ export default {
     name: "StartScene",
     objects : [
       {
+        name: "Main Camera",
+        location: { x: 0, y: 0 },
+        type: "Camera",
+      },
+      {
+        name: "GUI Canvas",
+        location: { x: 0, y: 0 },
+        type: "Canvas",
+        children: [
+          {
+            name: "Upper Left",
+            location: { x: 10, y: 20 },
+            type: "ScreenText",
+            componentValues: [
+              {
+                type: "RectTransform",
+                values: [
+                  {
+                    key:"anchorHorizontal",
+                    value:"left",
+                  },
+                  {
+                    key:"anchorVertical",
+                    value:"top"
+                  }
+                  
+                ]
+              },
+            ]
+  
+          },
+          {
+            name: "Lower Right",
+            location: { x: -100, y: -10 },
+            type: "ScreenText",
+            componentValues: [
+              {
+                type: "RectTransform",
+                values: [
+                  {
+                    key:"anchorHorizontal",
+                    value:"right",
+                  },
+                  {
+                    key:"anchorVertical",
+                    value:"bottom"
+                  }
+                  
+                ]
+              },
+            ]
+  
+          }
+        ]
+      },
+      {
         name: "testtext",
         location: {x:75, y:75},
         type: "TextTimer",
