@@ -15,7 +15,8 @@ export default class CountDownTimer extends Base.Behavior {
 
         this.gameObject.getComponent(Components.TextComponent).text = this.time;
         if(this.time <= 0){
-            SceneManager.currentScene = this.toSceneText;
+            this.time = 10
+            //SceneManager.currentScene = this.toSceneText;
         }
 
 
