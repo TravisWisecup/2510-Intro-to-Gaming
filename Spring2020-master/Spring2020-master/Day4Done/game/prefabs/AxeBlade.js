@@ -10,7 +10,7 @@ export default {
         },
         {
           key: "y",
-          value: "3"
+          value: "13"
         },
         {
           key: "r",
@@ -22,7 +22,7 @@ export default {
         },
         {
           key: "eAngle",
-          value: "Math.PI"
+          value: "3.2"
         },
         {
           key: "fill",
@@ -30,9 +30,6 @@ export default {
         },
 
       ]
-    },
-    {
-      type:"AxeHandleBehavior",
-    },
+    }
   ]
 }

@@ -6,11 +6,11 @@ export default {
       values:[
         {
           key: "width",
-          value: "800"
+          value: "200"
         },
         {
           key: "height",
-          value: "200"
+          value: "50"
         },
         {
           key: "fill",
