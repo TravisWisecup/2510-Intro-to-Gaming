@@ -18,6 +18,7 @@ import Canvas from "./prefabs/Canvas.js"
 import CollisionCircle from "./prefabs/CollisionCircle.js"
 import CollisionDot from "./prefabs/CollisionDot.js"
 import ScreenText from "./prefabs/ScreenText.js"
+import Trees from "./prefabs/Trees.js"
 
 export default {
   OscillatingCircle,
@@ -38,4 +39,5 @@ export default {
   Camera,
   Canvas,
   ScreenText,
+  Trees
 }
