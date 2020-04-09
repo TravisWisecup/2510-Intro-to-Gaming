@@ -15,10 +15,16 @@
 
 export default {
     name: "StartScene",
+
     objects : [
       {
+        name:"Trees",
+        type:'Trees',
+        location:{x:0,y:0}
+      },
+      {
         name: "Main Camera",
-        location: { x: 0, y: 0 },
+        location: { x: 150, y: 150 },
         type: "Camera",
       },
       {
@@ -35,18 +41,26 @@ export default {
                 type: "RectTransform",
                 values: [
                   {
-                    key:"anchorHorizontal",
-                    value:"left",
+                    key: "anchorHorizontal",
+                    value: "left",
                   },
                   {
-                    key:"anchorVertical",
-                    value:"top"
+                    key: "anchorVertical",
+                    value: "top"
                   }
-                  
+
                 ]
               },
+              {
+                type:"TextComponent",
+                values:[
+                  {
+                    key:"text",
+                    value:"Text"
+                  }
+                ]
+              }
             ]
-  
           },
           {
             name: "Lower Right",
@@ -57,18 +71,26 @@ export default {
                 type: "RectTransform",
                 values: [
                   {
-                    key:"anchorHorizontal",
-                    value:"right",
+                    key: "anchorHorizontal",
+                    value: "right",
                   },
                   {
-                    key:"anchorVertical",
-                    value:"bottom"
+                    key: "anchorVertical",
+                    value: "bottom"
                   }
-                  
+
                 ]
               },
+              {
+                type:"TextComponent",
+                values:[
+                  {
+                    key:"text",
+                    value:"Text"
+                  }
+                ]
+              }
             ]
-  
           }
         ]
       },
@@ -101,9 +123,9 @@ export default {
         children:[
             {
                 name:"axeBlade",
-                location: {x:0, y:0},
+                location: {x:0, y:-15},
                 type:"AxeBlade",
-            },
+            }
           ]
       },
       {
