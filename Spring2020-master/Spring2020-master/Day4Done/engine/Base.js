@@ -1,5 +1,5 @@
+  
 import Behavior from "./base/Behavior.js"
-import Camera from "./base/Camera.js"
 import Component from "./base/Component.js"
 import GameObject from "./base/GameObject.js"
 import Scene from "./base/Scene.js"
@@ -10,7 +10,6 @@ import Point from "./base/Point.js"
 
 export default {
   Behavior,
-  Camera,
   Component,
   GameObject,
   Scene,
