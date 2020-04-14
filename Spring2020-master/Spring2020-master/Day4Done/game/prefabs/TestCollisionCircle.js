@@ -19,9 +19,6 @@ export default {
         ]
       },
       {
-        type: "MovementBehavior",
-      },
-      {
         type: "DotBehavior",
       },
       {

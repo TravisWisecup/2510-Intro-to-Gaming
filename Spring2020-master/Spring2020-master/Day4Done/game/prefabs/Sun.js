@@ -19,17 +19,9 @@ export default {
       ]
     },
     {
-      type:"CircleCollider",
-      values:[
-        {
-          key:"radius",
-          value:"55"
-        }
-      ]
-    },
-    {
       type:"OrbitBehavior",
-    },
+    },   
+
     {
       type:"CollisionCircleBehavior",
     },

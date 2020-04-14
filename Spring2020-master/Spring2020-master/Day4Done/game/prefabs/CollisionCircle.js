@@ -30,5 +30,6 @@ export default {
     {
       type:"CollisionCircleBehavior",
     },
+
   ]
 }
