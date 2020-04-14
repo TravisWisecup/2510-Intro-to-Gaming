@@ -129,6 +129,16 @@ export default {
           ]
       },
       {
+        name: "CollisionCircle",
+        location: {x:0, y:1},
+        type: "CollisionCircle"
+      },
+      {
+        name: "collisionDot",
+        location: {x:0, y:0},
+        type: "CollisionDot"
+      },
+      {
         name:"trackerBar",
         location: {x:260, y:50},
         type:"TrackerBar",
