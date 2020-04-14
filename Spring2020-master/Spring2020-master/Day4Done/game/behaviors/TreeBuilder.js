@@ -36,17 +36,17 @@ export default class TreeBuilder extends Base.Behavior {
       let branchX = 35;
       let branchY = 20;
       let branchRotate = .8;
-      for(let j = 0; j < 2; j++)	
+      for(let j = 0; j < 6; j++)	
       {	
         if(j % 2 == 0){
-          branchY -= ((j/2) * 20);
+          branchY -= ((j/2) * 60);
         }
         else{	
           branchX *= -1;
           branchRotate *= -1;
-          branchY -= ((j-1)/2 * 20);
+          branchY -= ((j-1)/2 * 10);
         }
-        let branch = SceneManager.instantiate(Branch, new Base.Point(branchX, branchY), branchRotate)
+        let branch = SceneManager.currentScene.instantiate(Branch, new Base.Point(branchX, branchY), branchRotate,treetrunk.children)
         treetrunk.children.push(branch)
       }	
     }
