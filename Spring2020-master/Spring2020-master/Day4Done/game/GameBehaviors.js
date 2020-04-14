@@ -9,6 +9,7 @@ import DotBehavior from "./behaviors/DotBehavior.js";
 import TreeBuilder from "./behaviors/TreeBuilder.js";
 import UpdateBranchBehavior from "./behaviors/UpdateBranchBehavior.js";
 import CountDownTimer from "./behaviors/CountDownTimer.js";
+import MovementBehavior from "./behaviors/MovementBehavior.js";
 
 export default{
   CircleBehavior,
@@ -20,6 +21,7 @@ export default{
   CollisionCircleBehavior,
   DotBehavior,
   TreeBuilder,
+  MovementBehavior,
   UpdateBranchBehavior,
   CountDownTimer
   

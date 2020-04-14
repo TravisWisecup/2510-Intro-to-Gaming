@@ -35,6 +35,8 @@ export default {
   TextTimer,
   TrackerBar,
   TreeTrunk,
+  CollisionDot,
+  CollisionCircle,
   TestCollisionCircle,
   Camera,
   Canvas,
