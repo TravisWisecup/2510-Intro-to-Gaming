@@ -23,10 +23,10 @@ export default class TreeBuilder extends Base.Behavior {
       let _y = 375;
       if(i % 2 == 0)	
       {	
-        _x += (i*35);	
+        _x += (i*55);	
       }	
       else{	
-        _x -= (i*35);
+        _x -= (i*55);
       }	
       let treetrunk = SceneManager.instantiate(TreeTrunk, new Base.Point(_x,_y), 0)
       this.gameObject.children.push(treetrunk)
@@ -34,17 +34,18 @@ export default class TreeBuilder extends Base.Behavior {
       //treetrunk.scaleX = treeScale;	
       //treetrunk.scaleY = treeScale;	
       let branchX = 35;
-      let branchY = 20;
+      let branchY = -280;
       let branchRotate = .8;
-      for(let j = 0; j < 6; j++)	
+      for(let j = 0; j < 14; j++)	
       {	
+        branchY = -280;
         if(j % 2 == 0){
-          branchY -= ((j/2) * 60);
+          branchY += ((j/2) * 30);
         }
         else{	
           branchX *= -1;
           branchRotate *= -1;
-          branchY -= ((j-1)/2 * 10);
+          branchY += (((j-1)/2) * 30);
         }
         let branch = SceneManager.currentScene.instantiate(Branch, new Base.Point(branchX, branchY), branchRotate,treetrunk.children)
         treetrunk.children.push(branch)
