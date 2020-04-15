@@ -25,5 +25,8 @@ export default {
     {
       type:"AxeHandleBehavior",
     },
+    {
+      type:"MovementBehavior",
+    },
   ]
 }
