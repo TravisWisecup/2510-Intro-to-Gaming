@@ -17,7 +17,7 @@ export default class TreeBuilder extends Base.Behavior {
 
     for(let i = 0; i < this.trees; i++)
     {
-      //let treeScale = randomInteger(0.4, 1.1);	
+      let treeScale = randomInteger(0.65, 1.1);	
       this.peons.push([]);
       let _x = 525;
       let _y = 375;
@@ -31,9 +31,9 @@ export default class TreeBuilder extends Base.Behavior {
       let treetrunk = SceneManager.instantiate(TreeTrunk, new Base.Point(_x,_y), 0)
       this.gameObject.children.push(treetrunk)
       this.peons[i].push(treetrunk)
-      //treetrunk.scaleX = treeScale;	
-      //treetrunk.scaleY = treeScale;	
-      let branchX = 35;
+      treetrunk.scaleX = treeScale;	
+      treetrunk.scaleY = treeScale;	
+      let branchX = 32;
       let branchY = -280;
       let branchRotate = .8;
       for(let j = 0; j < 14; j++)	
@@ -52,4 +52,9 @@ export default class TreeBuilder extends Base.Behavior {
       }	
     }
   }
+}
+
+function randomInteger(min, max) 
+{
+  return (Math.random() * (min - max) + max)
 }
