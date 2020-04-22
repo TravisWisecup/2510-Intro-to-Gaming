@@ -26,7 +26,23 @@ export default {
         name: "Main Camera",
         location: { x: 150, y: 150 },
         type: "Camera",
-      },
+        componentValues: [
+        {
+          type: "CameraComponent",
+          values: [
+            {
+              key: "backgroundColor",
+              value: "white"
+            }
+          ],
+        }
+      ],
+      components: [
+        {
+          type: "CameraMover"
+        }
+      ]
+    },
       {
         name: "GUI Canvas",
         location: { x: 0, y: 0 },
@@ -129,16 +145,6 @@ export default {
           ]
       },
       {
-        name: "CollisionCircle",
-        location: {x:0, y:1},
-        type: "CollisionCircle"
-      },
-      {
-        name: "collisionDot",
-        location: {x:0, y:0},
-        type: "CollisionDot"
-      },
-      {
         name:"trackerBar",
         location: {x:260, y:50},
         type:"TrackerBar",
@@ -211,8 +217,6 @@ export default {
 
 //         background.children.push(sun)
 
-//         function randomInteger(min, max) {
-//             return (Math.random() * (min - max) + max)
-//         }
+//         
 //     }
 // }
