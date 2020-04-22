@@ -19,11 +19,20 @@ export default {
       ]
     },
     {
-      type:"OrbitBehavior",
-    },   
-
+      type:"CircleCollider",
+      values:[
+        {
+          key:"radius",
+          value:"55"
+        }
+      ]
+    },    
     {
       type:"CollisionCircleBehavior",
     },
+    {
+      type:"OrbitBehavior",
+    },   
+
   ]
 }

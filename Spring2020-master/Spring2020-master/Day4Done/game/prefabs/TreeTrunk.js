@@ -10,7 +10,7 @@ export default {
         },
         {
           key: "height",
-          value: "600"
+          value: "350"
         },
         {
           key: "fill",
