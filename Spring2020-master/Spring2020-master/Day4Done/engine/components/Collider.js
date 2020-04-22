@@ -1,10 +1,12 @@
-import Base from "../Base.js"
+import Component from "../base/Component.js"
 
-export default class Collider extends Base.Component{
-    constructor(){
+class Collider extends Component {
+    constructor() {
         super();
     }
 
-    
-    
+
+
 }
+
+export default Collider;
