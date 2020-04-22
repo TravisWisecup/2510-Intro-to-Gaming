@@ -7,9 +7,14 @@ import OrbitBehavior from "./behaviors/OrbitBehavior.js";
 import CollisionCircleBehavior from "./behaviors/CollisionCircleBehavior.js";
 import DotBehavior from "./behaviors/DotBehavior.js";
 import TreeBuilder from "./behaviors/TreeBuilder.js";
+import FewTreeBuilder from "./behaviors/FewTreeBuilder.js";
 import UpdateBranchBehavior from "./behaviors/UpdateBranchBehavior.js";
 import CountDownTimer from "./behaviors/CountDownTimer.js";
 import MovementBehavior from "./behaviors/MovementBehavior.js";
+import ClickBehavior from "./behaviors/ClickBehavior.js"
+import CameraMover from "./behaviors/CameraMover.js"
+import MouseText from "./behaviors/MouseText.js"
+import StartSceneInputListener from "./behaviors/StartSceneInputListener.js"
 
 export default{
   CircleBehavior,
@@ -23,6 +28,11 @@ export default{
   TreeBuilder,
   MovementBehavior,
   UpdateBranchBehavior,
-  CountDownTimer
+  CountDownTimer,
+  ClickBehavior,
+  CameraMover,
+  MouseText,
+  StartSceneInputListener,
+  FewTreeBuilder
   
 }

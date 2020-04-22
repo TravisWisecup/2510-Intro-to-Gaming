@@ -17,8 +17,14 @@ import Camera from "./prefabs/Camera.js"
 import Canvas from "./prefabs/Canvas.js"
 import CollisionCircle from "./prefabs/CollisionCircle.js"
 import CollisionDot from "./prefabs/CollisionDot.js"
-import ScreenText from "./prefabs/ScreenText.js"
 import Trees from "./prefabs/Trees.js"
+import FewTrees from "./prefabs/FewTrees.js"
+import ScreenText from "./prefabs/ScreenText.js"
+import Triangle from "./prefabs/Triangle.js"
+import StartSceneListener from "./prefabs/StartSceneListener.js"
+import Rectangle from "./prefabs/Rectangle.js"
+import StartButton from "./prefabs/StartButton.js"
+import Text from "./prefabs/Text.js"
 
 export default {
   OscillatingCircle,
@@ -41,5 +47,13 @@ export default {
   Camera,
   Canvas,
   ScreenText,
-  Trees
+  Trees,
+  Triangle,
+  StartSceneListener,
+  Rectangle,
+  StartButton,
+  Text,
+  FewTrees,
+  
+
 }
