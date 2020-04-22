@@ -7,20 +7,15 @@ import TreeTrunk from "../prefabs/TreeTrunk.js";
 
 
 export default class TreeBuilder extends Base.Behavior {
-  peons = []
-
   trees = 15;
-  branches = 36;
-
+  branches = 14;
   
   start() {
-
     for(let i = 0; i < this.trees; i++)
     {
       let treeScale = randomInteger(0.65, 1.1);	
-      this.peons.push([]);
       let _x = 525;
-      let _y = 375;
+      let _y = 325;
       if(i % 2 == 0)	
       {	
         _x += (i*55);	
@@ -29,14 +24,12 @@ export default class TreeBuilder extends Base.Behavior {
         _x -= (i*55);
       }	
       let treetrunk = SceneManager.instantiate(TreeTrunk, new Base.Point(_x,_y), 0)
-      this.gameObject.children.push(treetrunk)
-      this.peons[i].push(treetrunk)
       treetrunk.scaleX = treeScale;	
       treetrunk.scaleY = treeScale;	
       let branchX = 32;
       let branchY = -280;
       let branchRotate = .8;
-      for(let j = 0; j < 14; j++)	
+      for(let j = 0; j < branches; j++)	
       {	
         branchY = -280;
         if(j % 2 == 0){

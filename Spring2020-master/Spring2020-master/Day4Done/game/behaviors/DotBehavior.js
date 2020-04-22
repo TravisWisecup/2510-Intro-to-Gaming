@@ -21,13 +21,11 @@ export default class DotBehavior extends Base.Behavior {
 
             SceneManager.destroy(collisionObject.gameObject);
             SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
-            
+            console.log("Win")
         }
         if (collisionObject.gameObject.name == "sun") {
 
-            SceneManager.destroy(collisionObject.gameObject);
-            SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
-            
+           console.log("Sometimes I wonder.")            
         }
         else if (collisionObject.gameObject.name == "Rectangle") {
 
