@@ -14,6 +14,7 @@ import MovementBehavior from "./behaviors/MovementBehavior.js";
 import ClickBehavior from "./behaviors/ClickBehavior.js"
 import CameraMover from "./behaviors/CameraMover.js"
 import MouseText from "./behaviors/MouseText.js"
+import MatrixReturn from "./behaviors/MatrixReturn.js"
 import StartSceneInputListener from "./behaviors/StartSceneInputListener.js"
 
 export default{
@@ -32,7 +33,8 @@ export default{
   ClickBehavior,
   CameraMover,
   MouseText,
+  MatrixReturn,
   StartSceneInputListener,
-  FewTreeBuilder
+  FewTreeBuilder,
   
 }
