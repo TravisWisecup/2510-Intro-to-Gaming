@@ -15,7 +15,7 @@ export default class OrbitBehavior extends Base.Behavior{
 
         if(this.time >= 6)
         {
-            SceneManager.currentScene = "SceneOne";
+            // SceneManager.currentScene = "SceneOne";
         }
     }
 }

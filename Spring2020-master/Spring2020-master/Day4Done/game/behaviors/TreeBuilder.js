@@ -24,12 +24,12 @@ export default class TreeBuilder extends Base.Behavior {
         _x -= (i*55);
       }	
       let treetrunk = SceneManager.instantiate(TreeTrunk, new Base.Point(_x,_y), 0)
-      treetrunk.scaleX = treeScale;	
-      treetrunk.scaleY = treeScale;	
+      // treetrunk.scaleX = treeScale;	
+      // treetrunk.scaleY = treeScale;	
       let branchX = 32;
       let branchY = -280;
       let branchRotate = .8;
-      for(let j = 0; j < branches; j++)	
+      for(let j = 0; j < this.branches; j++)	
       {	
         branchY = -280;
         if(j % 2 == 0){
@@ -40,8 +40,7 @@ export default class TreeBuilder extends Base.Behavior {
           branchRotate *= -1;
           branchY += (((j-1)/2) * 30);
         }
-        let branch = SceneManager.currentScene.instantiate(Branch, new Base.Point(branchX, branchY), branchRotate,treetrunk.children)
-        treetrunk.children.push(branch)
+        SceneManager.currentScene.instantiate(Branch, new Base.Point(branchX, branchY), branchRotate,treetrunk.children)
       }	
     }
   }

@@ -24,9 +24,7 @@ export default class TreeBuilder extends Base.Behavior {
       else{	
         _x -= (i*55);
       }	
-      let treetrunk = SceneManager.instantiate(TreeTrunk, new Base.Point(_x,_y), 0)
-      treetrunk.scaleX = treeScale;	
-      treetrunk.scaleY = treeScale;	
+      let treetrunk = SceneManager.instantiate(TreeTrunk, new Base.Point(_x,_y), 0, treeScale, treeScale)
       let branchX = 32;
       let branchY = -280;
       let branchRotate = .8;
