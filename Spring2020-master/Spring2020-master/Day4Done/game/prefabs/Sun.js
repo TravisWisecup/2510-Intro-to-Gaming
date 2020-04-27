@@ -26,9 +26,12 @@ export default {
           value:"55"
         }
       ]
-    },    
+    }, 
     {
       type:"CollisionCircleBehavior",
+    },
+    {
+      type:"MatrixReturn",
     },
     {
       type:"OrbitBehavior",
