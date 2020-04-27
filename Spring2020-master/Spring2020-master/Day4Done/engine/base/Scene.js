@@ -405,7 +405,7 @@ class Scene extends NameableParent {
 
 
 
-  instantiate(gameObjectType, location, rotation, parent) {
+  instantiate(gameObjectType, location, rotation, parent, scaleX, scaleY) {
     /*let gameObject = new gameObjectType(location.x, location.y);
 gameObject.rotation = rotation;
  
@@ -413,7 +413,7 @@ parent.push(gameObject);
 gameObject.recursiveCall("start");
 return gameObject*/
 
-    let gameObject = new GameObject(location.x, location.y, 1, 1, rotation);
+    let gameObject = new GameObject(location.x, location.y, scaleX, scaleY, rotation);
     parent.push(gameObject);
     let prefab = Scene.gameObjects[gameObjectType.name];
     this.buildIt(prefab, gameObject)
