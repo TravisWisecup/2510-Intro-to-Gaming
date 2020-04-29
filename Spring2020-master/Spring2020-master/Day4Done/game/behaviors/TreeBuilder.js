@@ -4,6 +4,7 @@ import SceneManager from "../SceneManager.js";
 import GameObjects from "../GameObjects.js"
 import Point from "../../engine/base/Point.js";
 import TreeTrunk from "../prefabs/TreeTrunk.js";
+import Triangle from "../prefabs/Triangle.js";
 
 
 export default class TreeBuilder extends Base.Behavior {
@@ -24,6 +25,7 @@ export default class TreeBuilder extends Base.Behavior {
         _x -= (i*55);
       }	
       let treetrunk = SceneManager.instantiate(TreeTrunk, new Base.Point(_x,_y), 0)
+      // let triangle = SceneManager.instantiate(Triangle, new Base.Point(_x,_y), 0)
       // treetrunk.scaleX = treeScale;	
       // treetrunk.scaleY = treeScale;	
       let branchX = 32;
