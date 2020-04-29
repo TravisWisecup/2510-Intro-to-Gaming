@@ -31,9 +31,6 @@ export default {
       type:"CollisionCircleBehavior",
     },
     {
-      type:"MatrixReturn",
-    },
-    {
       type:"OrbitBehavior",
     },   
 

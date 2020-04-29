@@ -27,11 +27,11 @@ export default {
         values: [
           {
             key: "width",
-            value: "100",
+            value: "300",
           },
           {
             key: "height",
-            value: "100"
+            value: "75"
           }
         ]
       },
