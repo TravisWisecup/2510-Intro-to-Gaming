@@ -1,11 +1,7 @@
-import Collider from "./Collider.js"
+import Base from "../Base.js"
 
-/**
-Axis - Aligned Bounding Box 
-*/
 
-class TriangleCollider extends Collider {
-    
+class TriangleComponent extends Base.Component {
     points = [];
     pointAX;
     pointAY;
@@ -13,9 +9,25 @@ class TriangleCollider extends Collider {
     pointBY;
     pointCX;
     pointCY;
-    
+    fill;
+    stroke;
     constructor() {
         super();
+
+    }
+    draw(ctx) {
+        if(this.points.length == 0) return;
+        ctx.save();
+        ctx.fillStyle = this.fill;
+        ctx.strokeStyle = this.stroke;
+        ctx.beginPath();
+        ctx.moveTo(+this.points[0].x, +this.points[0].y);
+        ctx.lineTo(+this.points[1].x, +this.points[1].y)
+        ctx.lineTo(+this.points[2].x, +this.points[2].y)
+        ctx.closePath()
+        ctx.fill();
+        ctx.stroke();
+        ctx.restore();
     }
     update() {
         if(this.points.length == 0){
@@ -23,7 +35,6 @@ class TriangleCollider extends Collider {
         }
 
     }
-
 }
 
-export default TriangleCollider;
+export default TriangleComponent;
