@@ -40,6 +40,8 @@ class GameObject extends NameableParent {
      */
     components = [];
 
+    matrix = [3][3] = [[1,1,1],[1,1,1],[0,0,1]];
+
     /**
      * Returns the location of the game object as a Point object rather than two
      * variables x and y.
@@ -62,6 +64,12 @@ class GameObject extends NameableParent {
     constructor(x = 0, y = 0, scaleX = 1, scaleY = 1, rotation = 0) {
         super();
         [this.x, this.y, this.scaleX, this.scaleY, this.rotation] = [x, y, scaleX, scaleY, rotation];
+        this.matrix[0][2] = this.x;
+        this.matrix[1][2] = this.y;
+        this.matrix[0][0] = Math.cos(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleX;
+        this.matrix[0][1] = -1 * Math.sin(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleY;
+        this.matrix[1][0] = Math.sin(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleX;
+        this.matrix[1][1] = Math.cos(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleY;
     }
     /**
      * 
@@ -152,6 +160,16 @@ class GameObject extends NameableParent {
 
         //Now update all the children
         this.children.forEach(i => i.update());
+
+        if(this.components.find(i => i.parent == null))
+            this.matrix[0][2] = this.x;
+        else
+            this.matrix[0][2] = this.x * this.NameableParent.matrix[0][2];
+        this.matrix[1][2] = this.y;
+        this.matrix[0][0] = Math.cos(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleX;
+        this.matrix[0][1] = -1 * Math.sin(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleY;
+        this.matrix[1][0] = Math.sin(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleX;
+        this.matrix[1][1] = Math.cos(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleY;
     }
     getComponent(type) {
         if (typeof (type) === 'string' || type instanceof String) {
