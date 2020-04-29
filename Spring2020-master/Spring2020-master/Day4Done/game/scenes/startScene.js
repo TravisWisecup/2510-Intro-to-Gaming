@@ -128,9 +128,14 @@ export default {
           ]
       },
       {
-        name:"log",
-        location: {x:350, y:350},
-        type:"Log",
+        name:"dot",
+        location: {x:10, y:10},
+        type:"CollisionDot",
+      },
+      {
+        name:"circle",
+        location: {x:10, y:10},
+        type:"CollisionCircle",
       },
       {
         name:"axe",
