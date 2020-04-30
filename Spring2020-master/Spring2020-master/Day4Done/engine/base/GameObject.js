@@ -42,6 +42,8 @@ class GameObject extends NameableParent {
 
     matrix = [3][3] = [[1,1,1],[1,1,1],[0,0,1]];
 
+    parent = null;
+
     /**
      * Returns the location of the game object as a Point object rather than two
      * variables x and y.

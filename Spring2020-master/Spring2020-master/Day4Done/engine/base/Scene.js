@@ -66,8 +66,24 @@ class Scene extends NameableParent {
       this.children = [];
       for (let i = 0; i < this.objects.length; i++) {
         let obj = this.objects[i];
+        this.assignParent(this.objects[i]);
         this.buildChild2(obj, this.children)
+      }
+    }
+  }
 
+  assignParent(obj)
+  {
+    let skip = false;
+    if(obj.children == null)
+    {
+      skip = true;
+    }
+    if(skip == false){
+      for(let i = 0; i < obj.children.length; i++)
+      {
+        obj.children[i].parent = obj;
+        this.assignParent(obj.children[i]);
       }
     }
   }
