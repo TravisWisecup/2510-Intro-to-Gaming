@@ -34,9 +34,6 @@ export default class DotBehavior extends Base.Behavior {
 
             SceneManager.destroy(collisionObject.gameObject);
             SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
-            SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
-            SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
-            SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
             SceneManager.instantiate(Triangle, new Point(Math.random() * 40, Math.random() * 40), 0);
             console.log("tWin")
         }
