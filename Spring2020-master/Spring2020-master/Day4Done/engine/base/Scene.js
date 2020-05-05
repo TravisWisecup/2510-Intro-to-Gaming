@@ -66,7 +66,6 @@ class Scene extends NameableParent {
       this.children = [];
       for (let i = 0; i < this.objects.length; i++) {
         let obj = this.objects[i];
-        this.assignParent(this.objects[i]);
         this.buildChild2(obj, this.children)
       }
     }
@@ -97,7 +96,6 @@ class Scene extends NameableParent {
       for (let i = 0; i < this.objects.length; i++) {
         let obj = this.objects[i];
         this.buildChild(obj, this.children)
-
       }
     }
   }
@@ -118,7 +116,7 @@ class Scene extends NameableParent {
         break;
       }
     }
-    if (gameObjectType == null) throw "Could now find game object of type " + obj.type;
+    if (gameObjectType == null) throw "Could not find game object of type " + obj.type;
 
     let gameObject = this.instantiate(gameObjectType, new Point(obj.location.x, obj.location.y), 0, parent);
     /*let gameObject = new GameObject(obj.location.x, obj.location.y, 1, 1, 0);
@@ -135,7 +133,7 @@ class Scene extends NameableParent {
     if (obj.children) {
       for (let i = 0; i < obj.children.length; i++) {
         let child = obj.children[i];
-        this.buildChild2(child, gameObject.children);
+        this.buildChild2(child, gameObject);
       }
 
     }
@@ -421,7 +419,7 @@ class Scene extends NameableParent {
 
 
 
-  instantiate(gameObjectType, location, rotation, parent, scaleX, scaleY) {
+  instantiate(gameObjectType, location, rotation, parent = this, scaleX, scaleY) {
     /*let gameObject = new gameObjectType(location.x, location.y);
 gameObject.rotation = rotation;
  
@@ -430,7 +428,13 @@ gameObject.recursiveCall("start");
 return gameObject*/
 
     let gameObject = new GameObject(location.x, location.y, scaleX, scaleY, rotation);
-    parent.push(gameObject);
+    if(parent.children == null)
+      parent.push(gameObject)
+    else{
+        parent.children.push(gameObject);
+      }
+    if(parent instanceof GameObject)
+      gameObject.parent = parent;
     let prefab = Scene.gameObjects[gameObjectType.name];
     this.buildIt(prefab, gameObject)
     gameObject.name = prefab.name;

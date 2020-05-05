@@ -72,6 +72,7 @@ class GameObject extends NameableParent {
         this.matrix[0][1] = -1 * Math.sin(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleY;
         this.matrix[1][0] = Math.sin(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleX;
         this.matrix[1][1] = Math.cos(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleY;
+        this.parent = this.parent;
     }
     /**
      * 
@@ -85,6 +86,21 @@ class GameObject extends NameableParent {
     addComponent(component) {
         this.components.push(component);
         component.gameObject = this;
+    }
+
+    updatewithParentMatrix()
+    {
+        this.multiplyMatrices(this.matrix, this.parent.matrix);
+    }
+
+    updatewithoutParent()
+    {
+        this.matrix[0][2] = this.x;
+        this.matrix[1][2] = this.y;
+        this.matrix[0][0] = Math.cos(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleX;
+        this.matrix[0][1] = -1 * Math.sin(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleY;
+        this.matrix[1][0] = Math.sin(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleX;
+        this.matrix[1][1] = Math.cos(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleY;
     }
 
     /**
@@ -163,16 +179,52 @@ class GameObject extends NameableParent {
         //Now update all the children
         this.children.forEach(i => i.update());
 
-        if(this.components.find(i => i.parent == null))
-            this.matrix[0][2] = this.x;
+        if(this.parent == null)
+            this.updatewithoutParent();
         else
-            this.matrix[0][2] = this.x * this.NameableParent.matrix[0][2];
-        this.matrix[1][2] = this.y;
-        this.matrix[0][0] = Math.cos(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleX;
-        this.matrix[0][1] = -1 * Math.sin(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleY;
-        this.matrix[1][0] = Math.sin(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleX;
-        this.matrix[1][1] = Math.cos(Math.atan2(this.matrix[0][2], this.matrix[1][2])) * this.scaleY;
+            this.updatewithParentMatrix();
+
     }
+    multiplyMatrixAndPoint(matrix, point) {
+        // Give a simple variable name to each part of the matrix, a column and row number
+        let c0r0 = matrix[ 0], c1r0 = matrix[ 1], c2r0 = matrix[ 2], c3r0 = matrix[ 3];
+        let c0r1 = matrix[ 4], c1r1 = matrix[ 5], c2r1 = matrix[ 6], c3r1 = matrix[ 7];
+        let c0r2 = matrix[ 8], c1r2 = matrix[ 9], c2r2 = matrix[10], c3r2 = matrix[11];
+        
+        // Now set some simple names for the point
+        let x = point[0];
+        let y = point[1];
+        let z = point[2];
+        
+        // Multiply the point against each part of the 1st column, then add together
+        let resultX = (x * c0r0) + (y * c0r1) + (z * c0r2);
+        
+        // Multiply the point against each part of the 2nd column, then add together
+        let resultY = (x * c1r0) + (y * c1r1) + (z * c1r2);
+        
+        // Multiply the point against each part of the 3rd column, then add together
+        let resultZ = (x * c2r0) + (y * c2r1) + (z * c2r2);
+        
+        return [resultX, resultY, resultZ];
+      }
+      multiplyMatrices(matrixA, matrixB) {
+        // Slice the second matrix up into rows
+        let row0 = [matrixB[ 0], matrixB[ 1], matrixB[ 2], matrixB[ 3]];
+        let row1 = [matrixB[ 4], matrixB[ 5], matrixB[ 6], matrixB[ 7]];
+        let row2 = [matrixB[ 8], matrixB[ 9], matrixB[10], matrixB[11]];
+      
+        // Multiply each row by matrixA
+        let result0 = this.multiplyMatrixAndPoint(matrixA, row0);
+        let result1 = this.multiplyMatrixAndPoint(matrixA, row1);
+        let result2 = this.multiplyMatrixAndPoint(matrixA, row2);
+      
+        // Turn the result rows back into a single matrix
+        return [
+          result0[0], result0[1], result0[2], result0[3],
+          result1[0], result1[1], result1[2], result1[3],
+          result2[0], result2[1], result2[2], result2[3],
+        ];
+      }
     getComponent(type) {
         if (typeof (type) === 'string' || type instanceof String) {
             //The user passed us a string, not a type
@@ -212,6 +264,8 @@ class GameObject extends NameableParent {
             child.recursiveCall(functionName);
         }
     }
+
+    
 }
 
 export default GameObject;
